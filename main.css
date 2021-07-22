@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+::selection {
+    background-color: #111111;
+    color: #646161;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('Images/Background.jpg');
+    background-size: cover;
+}
+h1 {
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    -webkit-text-stroke: 1px #02FFFF;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    margin: 100px 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: .5s;
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+.container .card img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+    transition: .5s;
+}
+.container .card:hover img {
+    left: 75%;
+    height: 500px;
+}
+.container .card .content {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.container .card:hover .content {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.container .card .content h2 {
+    -webkit-text-stroke: 1px #FFF;
+    text-transform: uppercase;
+    font-size: 1.9em;
+    line-height: 1em;
+    margin-bottom: 10px;
+}
+.container .card .content p {
+    color: #FFF;
+}
+.container .card .content a {
+    position: relative;
+    color: #111;
+    background-color: #FFF;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+}
+.container .card .content a:hover {
+    background-color: rgba(0,0,0,.8);
+    color: #FFF;
+    border: 1px solid #FFF;
+}
+@media (max-width: 1200px) {
+    .container .card {
+        width: auto;
+        margin: 20px;
+        max-width: 600px;
+        align-items: flex-start;
+    }
+    .container .card:hover {
+        height: 600px;
+    }
+    .container .card:hover img {
+        left: 50%;
+        height: 350px;
+    }
+    .container .card .content {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+}
+@media (max-width: 767px) {
+    h1 {
+        font-size: 25px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .container .card {
+        margin: 40px 20px;
+    }
+    .container .card:first-of-type {
+        margin-top: 120px;
+    }
+}
+@media (max-width: 435px) {
+    h1 {
+        font-size: 20px;
+    }
+    .container .card .content {
+        padding: 30px;
+    }
+    .container .card:hover img {
+        height: 300px;
+    }
+}
